@@ -1,0 +1,7 @@
+{
+  "auth": {
+    "login": "Login",
+    "errorMessage": "Errore"
+  },
+  "some": "Some1"
+}
