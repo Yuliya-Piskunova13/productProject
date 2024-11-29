@@ -18,10 +18,12 @@ export const LIGHT_THEME_COLORS = {
   background: '#FFFFFF',
   text: '#111827',
   secondary: '#1C8E00',
+  gray05: '#F3F4F6',
 };
 
 export const DARK_THEME_COLORS = {
   background: '#111827',
   text: '#FFFFFF',
   secondary: '#BBEFAD',
+  gray05: '#9B7280',
 };

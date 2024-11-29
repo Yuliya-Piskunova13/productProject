@@ -1,15 +1,14 @@
 import * as Keychain from 'react-native-keychain';
 import {createEvent, createStore, createEffect, sample} from 'effector';
 
-// Типизация данных авторизации
-export interface AuthData {
+export type AuthData = {
   token: string | null;
   login: string | null;
   password: string | null;
-}
+};
 
 export const clearAuthData = createEvent();
-export const initializeAuthData = createEvent(); // Событие для инициализации данных при старте приложения
+export const initializeAuthData = createEvent();
 
 export const saveAuthDataFx = createEffect<AuthData, AuthData, Error>(
   async authData => {
@@ -30,7 +29,7 @@ export const saveAuthDataFx = createEffect<AuthData, AuthData, Error>(
         console.log('Token saved to Keychain.');
       }
 
-      return authData; // Возвращаем данные для обновления Store
+      return authData;
     } catch (error) {
       console.error('Error saving data to Keychain:', error);
       throw error;
@@ -81,12 +80,12 @@ export const $authData = createStore<AuthData>({
   login: null,
   password: null,
 })
-  .on(saveAuthDataFx.doneData, (_, authData) => authData) // Обновляем store при успешном сохранении
+  .on(saveAuthDataFx.doneData, (_, authData) => authData)
   .on(
     loadAuthDataFx.doneData,
     (_, authData) => authData || {token: null, login: null, password: null},
-  ) // Загружаем данные
-  .reset(clearAuthDataFx.done); // Сбрасываем при успешной очистке данных
+  )
+  .reset(clearAuthDataFx.done);
 
 sample({
   clock: initializeAuthData,

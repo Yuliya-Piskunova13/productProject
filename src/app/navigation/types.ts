@@ -7,7 +7,7 @@ export type AuthStackParamList = {
 
 export type DashboardStackParamList = {
   HousesList: undefined;
-  Home: {houseId: string};
+  Apartment: {apartmentId: string};
 };
 
 export type ProfileStackParamList = {

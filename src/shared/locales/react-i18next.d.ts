@@ -5,18 +5,18 @@ import en from './en/translation.json';
 
 declare module 'react-i18next' {
   // versions lower than 11.11.0
-  interface Resources {
+  type Resources = {
     defaultNS: 'en';
     it: typeof it;
     en: typeof en;
-  }
+  };
 
   // versions higher than 11.11.0
-  interface CustomTypeOptions {
+  type CustomTypeOptions = {
     defaultNS: 'en';
     resources: {
       en: typeof en;
       it: typeof it;
     };
-  }
+  };
 }

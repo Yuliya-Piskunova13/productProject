@@ -6,7 +6,7 @@ export enum Routes {
   // Dashboard stack
   Dashboard = 'Dashboard',
   HousesList = 'HousesList',
-  Home = 'Home',
+  Apartment = 'Apartment',
 
   // Profile stack
   Profile = 'Profile',

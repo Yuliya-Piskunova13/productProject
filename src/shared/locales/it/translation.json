@@ -3,5 +3,10 @@
     "login": "Login",
     "errorMessage": "Errore"
   },
+  "apartmentCard": {
+    "buildYear": "Anno di costruzione",
+    "owner": "Proprietario",
+    "viewDetails": "Visualizza i dettagli"
+  },
   "some": "Some1"
 }
